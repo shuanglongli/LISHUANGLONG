@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="books">
+        <li id="">java</li>
+        <li>js</li>
+    </ul>
+    <input type="text" id="bookName"/>
+    选择颜色：<button id="red" onclick="redColor()">red</button>
+    <button id="blue" onclick="blueColor()">blue</button>
+    <button id="add" onclick="addBook()">+</button>
+    <button id="del">-</button>
+    <script>
+        str="";
+        const books=document.querySelector("#books")
+        const bookName=document.querySelector("#bookName")
+        const add=document.querySelector("#add")
+        const del=document.querySelector("#del")
+        var i=0;
+        var a=0;
+        const redColor=()=>{
+            i=1;
+        }
+        const blueColor=()=>{
+            i=2;
+        }
+        const addBook=()=>{
+            const oElement=document.createElement('li')
+            oElement.setAttribute("id",`li+${a}`);
+            const oText=document.createTextNode(bookName.value)
+            oElement.appendChild(oText)
+            books.appendChild(oElement)
+            bookName.value=""
+            if(i==1){
+                document.getElementById(`li+${a}`).style.color='red';
+                a++
+            }
+            if(i==2){
+                document.getElementById(`li+${a}`).style.color='blue';
+                a++
+            }
+        }
+        const delbook=()=>{
+            books.removeChild(books.lastElementChild)
+        }
+        add.addEventListener("click",addBook)
+        del.addEventListener("click",delbook)
+    </script>
+    </body>
+</html>
