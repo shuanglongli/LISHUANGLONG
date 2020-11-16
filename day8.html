@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="asd"  style="border: blue 1px solid;">asdf</div>
+    <div id="azxc"  style="border: blue 1px solid;">asdf</div>
+    <div class="asd"  style="border: red 1px solid;">adsd</div>
+    <div class="asd"  style="border: rgb(65, 65, 65) 1px solid;">dfdf</div>
+    <div class="asd"  style="border: rgb(65, 65, 65) 1px solid;">dfdf</div>
+    <script type="text/javascript">
+        var divs = document.getElementsByTagName("div");
+        var i=0;
+
+    while(i < divs.length){
+         var asd=document.body.appendChild(document.createElement("div"));
+         var pText = document.createTextNode("我是文本")
+         asd.appendChild(pText);
+        i++
+        if(i===8){
+            break
+        };
+        
+    }
+
+    // var divs = document.querySelectorAll("div"),
+    // i=0;
+
+    // while(i < divs.length){
+    //     document.body.appendChild(document.createElement("div")); 
+    //     i++;
+    // }
+    </script>
+</body>
+</html>
