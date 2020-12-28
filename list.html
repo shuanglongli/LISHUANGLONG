@@ -1,0 +1,38 @@
+<！DOCTYPE html >
+    < html  lang =“ en ” >
+    <头>
+        < meta  charset =“ UTF-8 ” >
+        < meta  name =“ viewport ” content =“ width = 1200，initial-scale = 1.0 ” >
+        <标题>文档</标题>
+        
+    </头>
+    <身体>
+        < ul  id =“图书” >
+            < li > Java </ li >
+            < li > Python </ li >
+        </ ul >
+        <输入 类型=“文本”   id =“ bookName ” />
+        < button  id =“ btnAdd ” > + </ button >
+        < button  id =“ btnDel ” > - </ button >
+        <脚本>
+            const  books  =  document 。querySelector （“ #books” ）;
+            const  bookName  =  document 。querySelector （“ #bookName” ）;
+            const  btnAdd  = 文档。querySelector （“ #btnAdd” ）;
+            const  btnDel  = 文档。querySelector （“ #btnDel” ）;
+
+            const  addBooks  =  （） =>  {
+                const  oElement  =  document 。createElement （'li' ）;
+                const  oText  =  document 。一个createTextNode （BOOKNAME 。值）;
+                oElement 。appendChild （oText ）;
+                书。appendChild （oElement ）;
+                bookName 。值 =  '' ;
+            }
+
+            const  delBooks  =  （） =>  {
+                书。removeChild之（书籍。lastElementChild ）;
+            }
+            btnAdd 。addEventListener （“ click” ，addBooks ）;
+            btnDel 。addEventListener （“ click” ，delBooks ）;
+        </脚本>
+    </ body >
+    </ html >
